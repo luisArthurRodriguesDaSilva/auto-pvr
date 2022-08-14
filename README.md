@@ -34,7 +34,7 @@ def divitedText(text, SizeLine):
 <img src="readmeImgs/certa.jpeg">
 <p>Dessa forma a imagem está pronta para a postagem que é feita com o <a href="https://github.com/tweepy/tweepy">tweepy</a></p>
 
-Resultados:
+<h3>Resultados:</h3>
 <img src="readmeImgs/Captura de tela de 2022-08-14 01-11-51.png">
 <img src="readmeImgs/Captura de tela de 2022-08-14 01-09-41.png">
 <img src="readmeImgs/Captura de tela de 2022-08-14 01-21-27.png">
