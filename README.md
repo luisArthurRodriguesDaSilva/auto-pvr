@@ -1,5 +1,3 @@
-
-
 <h1 align=center > auto-pvr</h1>
 
 <h3>funcionamento:</h3>
@@ -16,12 +14,35 @@
 
 <p>Após o sorteio do versículo ocorre a adição dele em uma imagem que também é sorteada, mas sem critério tamanho definidos</p>
 <p>Essa variedade de formatos exige uma adequação dos textos para que não saiam da tela como no exemplo a seguir:</p>
+<img src="readmeImgs/2Q== (3) copy.jpeg">
+<p>visto isso, foram criadas funções para adequar o texto através de um calculo com os espaços e o tamanho da imagem</p>
+função responsável por dividir o texto:
 
+```python
+def divitedText(text, SizeLine):
+  spaces = np.array(getSpaces(text))
+  volta = 0
+  while 1:
+    volta+=1
+    local = getBiggestSmallest(spaces,SizeLine*volta)
+    if local == 9000:
+      break
+    text = text[:local] + '\n' + text[local+1:]
+  return text , volta
+```
+<p>Após esse tratamento, a mesma imagem com o mesmo texto fica dessa forma:</p>
+<img src="readmeImgs/certa.jpeg">
+<p>Dessa forma a imagem está pronta para a postagem que é feita com o <a href="https://github.com/tweepy/tweepy">tweepy</a></p>
 
+Resultados:
+<img src="readmeImgs/Captura de tela de 2022-08-14 01-11-51.png">
+<img src="readmeImgs/Captura de tela de 2022-08-14 01-09-41.png">
+<img src="readmeImgs/Captura de tela de 2022-08-14 01-21-27.png">
 <hr width=27%/>
 
-<h3>principais bibliotecas utilizadas:</h3>
+<h3>principais recursos e bibliotecas utilizadas:</h3>
 <ul>
+	<li><a href="https://github.com/thiagobodruk/bible/tree/master/json">biblia.json</a></li>
 	<li>tweepy</li>
 	<li>numpy</li>
 	<li>PIL</li>
