@@ -39,7 +39,6 @@ def divitedText(text, SizeLine):
 <img align="center" src="readmeImgs/Captura de tela de 2022-08-14 01-09-41.png">
 <img align="center" src="readmeImgs/Captura de tela de 2022-08-14 01-21-27.png">
 <p> clique <a target="_blank" href="https://drive.google.com/drive/folders/19LjFJtHQEBpANqPGECgtkLA9bX49KBCx">aqui</a> para ver a pasta com todas as imagens publicadas no mês de agosto </p>
-<hr width=27%/>
 <p> e <a target="_blank" href="https://drive.google.com/drive/folders/1yuGbprORu_TXdnfDTMOf_uPgW1_f3rxR?usp=sharing">aqui</a> para ver a pasta com as imagens para o background</p>
 <hr width=27%/>
 
