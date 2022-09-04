@@ -1,7 +1,7 @@
 <h1 align=center > auto-pvr</h1>
 
 <h3>funcionamento:</h3>
-<h4>Utilizando o <a href="https://colab.research.google.com/">google colab</a>, para mais velocidade nas execuções, o <a href ="https://github.com/luisArthurRodriguesDaSilva/proverbios-automaticos/blob/main/autoProverbious.ipynb">auto-pvr</a> gera imagens com provérbios bíblicos e às posta automaticamente</h4>
+<h4>Utilizando o <a target="_blank" href="https://colab.research.google.com/">google colab</a>, para mais velocidade nas execuções, o <a target="_blank" href ="https://github.com/luisArthurRodriguesDaSilva/proverbios-automaticos/blob/main/autoProverbious.ipynb">auto-pvr</a> gera imagens com provérbios bíblicos e às posta automaticamente</h4>
 
 <hr width=5%/>
 <p>Em cada dia o script é executado uma vez, sorteando um versículo relativo ao capitulo daquele dia</p>
@@ -32,13 +32,13 @@ def divitedText(text, SizeLine):
 ```
 <p>Após esse tratamento, a mesma imagem com o mesmo texto fica dessa forma:</p>
 <img src="readmeImgs/certa.jpeg">
-<p>Dessa forma a imagem está pronta para a postagem que é feita com o <a href="https://github.com/tweepy/tweepy">tweepy</a></p>
+<p>Dessa forma a imagem está pronta para a postagem que é feita com o <a target="_blank" href="https://github.com/tweepy/tweepy">tweepy</a></p>
 
 <h3>Resultados:</h3>
 <img align="center" src="readmeImgs/Captura de tela de 2022-08-14 01-11-51.png">
 <img align="center" src="readmeImgs/Captura de tela de 2022-08-14 01-09-41.png">
 <img align="center" src="readmeImgs/Captura de tela de 2022-08-14 01-21-27.png">
-<a href="https://drive.google.com/drive/folders/19LjFJtHQEBpANqPGECgtkLA9bX49KBCx">pasta com todas as imagens publicadas no mês de agosto</a>
+<p> clique <a target="_blank" href="https://drive.google.com/drive/folders/19LjFJtHQEBpANqPGECgtkLA9bX49KBCx">aqui</a> para ver a pasta com todas as imagens publicadas no mês de agosto </p>
 <hr width=27%/>
 
 <h3>principais recursos e bibliotecas utilizadas:</h3>
