@@ -10,6 +10,9 @@ from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 from random import randrange
 from keys import keys
 import json
+import dotenv
+from ttApi import api
+
 
 def tranformar():
   if(inp == '+1') :
@@ -143,13 +146,14 @@ while 1:
     # cv2.waitKey(0)
 
   
-    auth = tweepy.OAuthHandler(keys['chave1'],keys['chave2'])
-    auth.set_access_token(keys['chave3'],keys['chave4'])
-    api = tweepy.API(auth)
-    twet = api.update_status_with_media(status='',filename=newPath)
+    if os.getenv('produção') == 'true':
+      api.update_status_with_media(status='',filename=newPath)
+    else:
+      api.send_direct_message(text = 'ei',recipient_id=(api.get_user(screen_name='noBugChapeu')._json['id_str']))
+  
   except Exception as e:
     print(e)
   print('to sleepando')
-  time.sleep(1000)
+  time.sleep(int(os.getenv('interval')))
   print('sleepei')
 
