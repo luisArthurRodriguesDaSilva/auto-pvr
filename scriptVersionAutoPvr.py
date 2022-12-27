@@ -112,7 +112,7 @@ while 1:
     [width, height] = img.size
     cantofact = 15
     sizeOfCanto = int(width/cantofact)
-    diminuit = 20 if extra else 15
+    diminuit = 20 if (extra or (len(finalResult) > 150)) else 15
     fontSize=int(width/diminuit)
     [initialWidth,initialHeight] = map(lambda x: int(x/cantofact),[width,height])
     limitLine = int(1.3*diminuit)
