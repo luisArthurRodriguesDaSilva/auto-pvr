@@ -145,7 +145,7 @@ while 1:
     # cv2.waitKey(0)
 
   
-    if os.getenv('produção') == 'true':
+    if os.getenv('producao') == 'true':
       api.update_status_with_media(status='',filename=newPath)
     else:
       api.send_direct_message(text = 'ei',recipient_id=(api.get_user(screen_name='noBugChapeu')._json['id_str']))
