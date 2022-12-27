@@ -8,7 +8,6 @@ import time
 import os
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 from random import randrange
-from keys import keys
 import json
 import dotenv
 from ttApi import api
