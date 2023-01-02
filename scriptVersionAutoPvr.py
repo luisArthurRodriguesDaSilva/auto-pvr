@@ -32,8 +32,6 @@ prv {versicleAdress}""")
   return finalResult
 
 
-today = date.today().day
-mounth = date.today().month
 
 bible = json.loads(requests.get('https://raw.githubusercontent.com/thiagobodruk/bible/master/json/pt_nvi.json').text.encode().decode('utf-8-sig'))
 for book  in bible :
@@ -43,6 +41,10 @@ for book  in bible :
 
 cap = proverbios['chapters']
 while 1:
+
+  today = date.today().day
+  mounth = date.today().month
+
   try:
     cd = cap[today-1]
     limit = len(cd)
