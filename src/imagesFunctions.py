@@ -30,7 +30,7 @@ def putTextOnImage(pilImage,text):
   imageDraw = ImageDraw.Draw(img)
   widthBlock,heightBlock = getBlocksSizes(img)
 
-  fontSize = widthBlock if widthBlock > heightBlock else heightBlock
+  fontSize = heightBlock if widthBlock > heightBlock else widthBlock 
   font = ImageFont.truetype('./font/arial.ttf' ,int(fontSize))
   imageDraw.text(
     (widthBlock,heightBlock), #initial cordinates
@@ -39,7 +39,7 @@ def putTextOnImage(pilImage,text):
   return img
   
 def saveImage(pilImage,cordinates):
-    dirPath = f'./versiculos/imagens-com-versiculos'
+    dirPath = './versiculos/imagens-com-versiculos'
     exist = (os.path.isdir(dirPath))
     if not exist:
       os.mkdir(dirPath)
