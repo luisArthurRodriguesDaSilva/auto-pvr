@@ -2,13 +2,15 @@ import os
 from random import randrange
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 from PIL.ImageFilter import BLUR
+import textFuncs as tf
 
 diviter = 15
 
 def raffleImage(dirPath):
-  imgNamePath = os.listdir(dirPath)
-  raffledImageAdress = imgNamePath[randrange(0,len(imgNamePath))]
-  return (dirPath + '/' + raffledImageAdress)
+  imagesFilenames = os.listdir(dirPath)
+  raffledImageAdress = imagesFilenames[randrange(0,len(imagesFilenames))]
+  imageAdress = (dirPath + '/' + raffledImageAdress)
+  return imageAdress
 
 def getEditedImage(imagePath):
   img = Image.open(imagePath)
@@ -22,5 +24,25 @@ def getBlocksSizes(pilImage):
   return widthBlock , heightBlock
 
 
-# def putTextOnImage(imagePath,text):
+def putTextOnImage(pilImage,text):
+  img = pilImage
+  adaptedText , numberOfLines =  tf.divitedText(text,diviter)
+  imageDraw = ImageDraw.Draw(img)
+  widthBlock,heightBlock = getBlocksSizes(img)
+
+  fontSize = widthBlock if widthBlock > heightBlock else heightBlock
+  font = ImageFont.truetype('./font/arial.ttf' ,int(fontSize))
+  imageDraw.text(
+    (widthBlock,heightBlock), #initial cordinates
+    adaptedText,
+    fill=(250, 250, 250), font=font)
+  return img
+  
+def saveImage(pilImage,cordinates):
+    dirPath = f'./versiculos/imagens-com-versiculos'
+    exist = (os.path.isdir(dirPath))
+    if not exist:
+      os.mkdir(dirPath)
+    newPath = f'{dirPath}/{cordinates[0]}{cordinates[1]}{cordinates[2]}.jpg'
+    pilImage.save(newPath)
 
