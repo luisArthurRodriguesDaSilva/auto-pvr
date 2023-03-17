@@ -17,8 +17,10 @@ def getCap(bookAbrev,capterNumber):
   return capters[capIndex]
 
 def getVersicle(bookAbrev,capterNumber,versicleNumber):
-  versicleIndex = versicleNumber - 1
-  capter = getCap(bookAbrev,capterNumber)
-  return capter[versicleIndex]
+  try:
+    versicleIndex = versicleNumber - 1
+    capter = getCap(bookAbrev.lower(),capterNumber)
+    return capter[versicleIndex]
+  except Exception as e:
+    print(e)
 
-print(getVersicle('pv',6,6))
