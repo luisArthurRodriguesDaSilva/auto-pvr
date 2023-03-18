@@ -3,7 +3,7 @@ from versicles import popularVersicles
 import imagesFunctions as imgf
 import ttApi as api
 
-for versicleCordinates in popularVersicles[30:40]:
+for versicleCordinates in popularVersicles[-10:]:
   [book,capterNumber,versicleNumber] = versicleCordinates
   print(versicleCordinates)
   versicleText = (getVersicle(book,capterNumber,versicleNumber))
