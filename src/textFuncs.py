@@ -26,4 +26,4 @@ def divitedText(text, SizeLine):
   return text , volta
 
 def putVersicle(versicle,cordinates):
-  return f'{versicle}\n____\n\n{cordinates[0]}-{cordinates[1]},{cordinates[2]}'
+  return f'{versicle}\n____\n\n{cordinates[0]}-{cordinates[1]}.{cordinates[2]}'
