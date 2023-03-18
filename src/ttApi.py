@@ -14,7 +14,7 @@ def notifyByDm(text):
   api.send_direct_message(1505211970643009544,text=text)
 
 def imageToMyDm(image,text=' s '):
-  media = api.media_upload(filename='mainPvrDir/pvrMounth12/pvr27.jpg')
+  media = api.media_upload(filename=image)
 
   api.send_direct_message(
     1505211970643009544,text=' s',

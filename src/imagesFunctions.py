@@ -24,9 +24,10 @@ def getBlocksSizes(pilImage):
   return widthBlock , heightBlock
 
 
-def putTextOnImage(pilImage,text):
+def putTextOnImage(pilImage,text,coordinates):
   img = pilImage
   adaptedText , numberOfLines =  tf.divitedText(text,diviter)
+  completeText = tf.putVersicle(adaptedText,coordinates)
   imageDraw = ImageDraw.Draw(img)
   widthBlock,heightBlock = getBlocksSizes(img)
 
@@ -34,7 +35,7 @@ def putTextOnImage(pilImage,text):
   font = ImageFont.truetype('./font/arial.ttf' ,int(fontSize))
   imageDraw.text(
     (widthBlock,heightBlock), #initial cordinates
-    adaptedText,
+    completeText,
     fill=(250, 250, 250), font=font)
   return img
   
@@ -45,4 +46,5 @@ def saveImage(pilImage,cordinates):
       os.mkdir(dirPath)
     newPath = f'{dirPath}/{cordinates[0]}{cordinates[1]}{cordinates[2]}.jpg'
     pilImage.save(newPath)
+    return {"newPath" : newPath}
 
