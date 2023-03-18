@@ -9,4 +9,15 @@ auth.set_access_token(os.getenv('chave3'),os.getenv('chave4'))
 api = tweepy.API(auth)
 print((api.get_user(screen_name='noBugChapeu')._json['id_str']))
 
+
+def notifyByDm(text):
+  api.send_direct_message(1505211970643009544,text=text)
+
+def imageToMyDm(image,text=' s '):
+  media = api.media_upload(filename='mainPvrDir/pvrMounth12/pvr27.jpg')
+
+  api.send_direct_message(
+    1505211970643009544,text=' s',
+    attachment_type='media',
+    attachment_media_id=media.media_id)
 #def sendmessage()
