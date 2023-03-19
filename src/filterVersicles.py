@@ -1,7 +1,7 @@
 from versicles import popularVersicles 
 from bibleApi import getVersicle
 
-aprovados = []
+aprovados = [] 
 for v in popularVersicles[20:50]:
   [book,capterNumber,versicleNumber] = v
   versicleText = (getVersicle(book,capterNumber,versicleNumber))
