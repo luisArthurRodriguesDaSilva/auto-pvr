@@ -9,7 +9,8 @@ auth.set_access_token(os.getenv('chave3'),os.getenv('chave4'))
 api = tweepy.API(auth)
 print((api.get_user(screen_name='noBugChapeu')._json['id_str']))
 
-
+def postIt(filename):
+    api.update_status_with_media(status='',filename=filename)
 def notifyByDm(text):
   api.send_direct_message(1505211970643009544,text=text)
 

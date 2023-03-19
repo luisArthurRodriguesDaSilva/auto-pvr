@@ -9,5 +9,5 @@ for v in popularVersicles[50:60]:
   aprovados.append(v) if input('aprovado?') == 's' else None
 
 with open("src/aprovados.py", 'w') as file:
-    file.write(f"""aprovados =  {aprovados}
+    file.write(f"""popularVersicles =  {aprovados}
 """)

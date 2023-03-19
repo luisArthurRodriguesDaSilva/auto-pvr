@@ -1,15 +1,23 @@
 from bibleApi import getVersicle
-from versicles import popularVersicles 
+from aprovados import popularVersicles 
 import imagesFunctions as imgf
-import ttApi as api
+from ttApi import postIt, imageToMyDm , notifyByDm
+import os
 
-for versicleCordinates in popularVersicles[-10:]:
-  [book,capterNumber,versicleNumber] = versicleCordinates
-  print(versicleCordinates)
-  versicleText = (getVersicle(book,capterNumber,versicleNumber))
+isProduction = lambda : os.getenv('producao') == 'true' 
 
-  rawImagePath = imgf.raffleImage('fotos maneras')
-  editedImage = imgf.getEditedImage(rawImagePath)
-  imgWithText = imgf.putTextOnImage(editedImage,versicleText,versicleCordinates)
-  newPath = imgf.saveImage(imgWithText,versicleCordinates)["newPath"]
-  api.imageToMyDm(newPath)
+for versicleCordinates in popularVersicles:
+  try:
+    [book,capterNumber,versicleNumber] = versicleCordinates
+    print(versicleCordinates)
+    versicleText = (getVersicle(book,capterNumber,versicleNumber))
+
+    rawImagePath = imgf.raffleImage('fotos maneras')
+    editedImage = imgf.getEditedImage(rawImagePath)
+    imgWithText = imgf.putTextOnImage(editedImage,versicleText,versicleCordinates)
+    finalImagePath = imgf.saveImage(imgWithText,versicleCordinates)["newPath"]
+    
+    postIt(finalImagePath) if isProduction() else imageToMyDm(finalImagePath)
+  
+  except Exception as e:
+    notifyByDm(e)
