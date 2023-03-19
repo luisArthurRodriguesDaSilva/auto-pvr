@@ -3,6 +3,7 @@ from aprovados import popularVersicles
 import imagesFunctions as imgf
 from ttApi import postIt, imageToMyDm , notifyByDm
 import os
+import time
 
 isProduction = lambda : os.getenv('producao') == 'true' 
 
@@ -21,3 +22,6 @@ for versicleCordinates in popularVersicles:
   
   except Exception as e:
     notifyByDm(e)
+  print('to sleepando')
+  time.sleep(int(os.getenv('interval')))
+  print('sleepei')
