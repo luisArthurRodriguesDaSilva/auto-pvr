@@ -1,7 +1,7 @@
 import tweepy
 from random import randrange
 from datetime import date
-from textFuncs import *
+import textFuncs as tf
 import requests
 # import cv2
 import time
@@ -108,18 +108,20 @@ while 1:
     imgNamePath = os.listdir(patternPath)
     print(imgNamePath)
     imgPath = patternPath + '/' + imgNamePath[randrange(0,len(imgNamePath))]
+
     img = Image.open(imgPath)
     img = img.filter(BLUR).filter(BLUR).filter(BLUR).filter(BLUR)
     img = ImageEnhance.Brightness(img).enhance(0.3)
+    
     [width, height] = img.size
     cantofact = 15
-    sizeOfCanto = int(width/cantofact)
     diminuit = 20 if (extra or (len(finalResult) > 150)) else 15
     fontSize=int(width/diminuit)
     [initialWidth,initialHeight] = map(lambda x: int(x/cantofact),[width,height])
     limitLine = int(1.3*diminuit)
+    
     print(limitLine)
-    convertedText , numberOfLines = divitedText(text,limitLine)
+    convertedText , numberOfLines = tf.divitedText(text,limitLine)
     print(img.size)
 
     if (height > width):

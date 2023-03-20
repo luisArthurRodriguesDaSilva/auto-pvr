@@ -24,3 +24,6 @@ def divitedText(text, SizeLine):
       break
     text = text[:local] + '\n' + text[local+1:]
   return text , volta
+
+def putVersicle(versicle,cordinates):
+  return f'{versicle}\n____\n\n{cordinates[0]}-{cordinates[1]}.{cordinates[2]}'
